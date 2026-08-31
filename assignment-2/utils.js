@@ -6,4 +6,22 @@ const checkPrimeNumber = (num) => {
   return true;
 };
 
-export { checkPrimeNumber };
+const checkArrPrimeNumbers = (arrNum) => {
+  for (let index = 0; index < arrNum.length; index++) {
+    if (checkPrimeNumber(arrNum[index]) === false) return false;
+  }
+  return true;
+};
+
+const getArrPrimNumbers = (amount) => {
+  const primNumbers = [];
+  let num = 2;
+  while (primNumbers.length < amount) {
+    if (checkPrimeNumber(num)) {
+      primNumbers.push(num);
+    }
+    num++;
+  }
+};
+
+export { checkPrimeNumber, checkArrPrimeNumbers, getArrPrimNumbers };
